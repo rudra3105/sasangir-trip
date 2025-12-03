@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4-Day Trip Itinerary — Jantral to Sasan Gir</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --safari-green: #2d5a27;
+      --safari-green-light: #4a7c43;
+      --safari-brown: #8b5a2b;
+      --safari-orange: #d4772c;
+      --safari-beige: #f5e6d3;
+      --safari-cream: #faf6f0;
+      --safari-dark: #1a1a1a;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--safari-cream);
+      min-height: 100vh;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(45, 90, 39, 0.85) 0%, rgba(139, 90, 43, 0.8) 100%),
+                  url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80') center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated Trees */
+    .trees-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      pointer-events: none;
+    }
+
+    .tree {
+      position: absolute;
+      bottom: 0;
+      animation: treeSway 4s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+
+    .tree:nth-child(1) { left: 5%; animation-delay: 0s; }
+    .tree:nth-child(2) { left: 15%; animation-delay: 0.5s; }
+    .tree:nth-child(3) { right: 5%; animation-delay: 1s; }
+    .tree:nth-child(4) { right: 15%; animation-delay: 1.5s; }
+
+    .tree svg {
+      width: 80px;
+      height: 150px;
+      fill: #1a3d16;
+    }
+
+    @keyframes treeSway {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+    }
+
+    /* Walking Lion Animation */
+    .lion-container {
+      position: absolute;
+      bottom: 80px;
+      left: -150px;
+      animation: lionWalk 20s linear infinite;
+    }
+
+    .lion-silhouette {
+      width: 120px;
+      height: 60px;
+      fill: rgba(26, 26, 26, 0.6);
+      animation: lionStep 0.5s ease-in-out infinite;
+    }
+
+    @keyframes lionWalk {
+      0% { left: -150px; }
+      100% { left: calc(100% + 150px); }
+    }
+
+    @keyframes lionStep {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    /* Jeep Animation */
+    .jeep-container {
+      position: absolute;
+      bottom: 60px;
+      left: -200px;
+      animation: jeepDrive 15s linear infinite;
+      animation-delay: 5s;
+    }
+
+    .jeep-svg {
+      width: 100px;
+      height: 50px;
+    }
+
+    @keyframes jeepDrive {
+      0% { left: -200px; transform: translateY(0); }
+      25% { transform: translateY(-3px); }
+      50% { transform: translateY(0); }
+      75% { transform: translateY(-3px); }
+      100% { left: calc(100% + 200px); transform: translateY(0); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(212, 119, 44, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      color: white;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: white;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      color: var(--safari-beige);
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.9s ease;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .hero-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(212, 119, 44, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.8rem;
+      transition: transform 0.3s, background 0.3s;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-icon:hover {
+      transform: scale(1.15) translateY(-5px);
+      background: var(--safari-orange);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      z-index: 10;
+    }
+
+    .scroll-indicator i {
+      color: white;
+      font-size: 2rem;
+    }
+
+    /* Safari Highlight Section */
+    .safari-highlight {
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, var(--safari-green) 0%, var(--safari-green-light) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .safari-bg-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .safari-tree-bg {
+      position: absolute;
+      opacity: 0.1;
+      animation: treeSway 5s ease-in-out infinite;
+    }
+
+    .safari-tree-bg:nth-child(1) { top: 10%; left: 5%; }
+    .safari-tree-bg:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; }
+    .safari-tree-bg:nth-child(3) { bottom: 10%; left: 15%; animation-delay: 2s; }
+
+    .safari-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .safari-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .safari-subtitle {
+      text-align: center;
+      color: var(--safari-beige);
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .safari-animation-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 250px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .safari-scene {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+
+    .safari-ground {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(180deg, #8b7355 0%, #6b5344 100%);
+      border-radius: 0 0 12px 12px;
+    }
+
+    .safari-grass {
+      position: absolute;
+      bottom: 35px;
+      left: 0;
+      right: 0;
+      height: 30px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .grass-blade {
+      width: 4px;
+      height: 25px;
+      background: var(--safari-green);
+      border-radius: 50% 50% 0 0;
+      animation: grassSway 2s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+
+    .grass-blade:nth-child(odd) { animation-delay: 0.3s; }
+
+    @keyframes grassSway {
+      0%, 100% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+    }
+
+    .animated-lion {
+      position: absolute;
+      bottom: 60px;
+      left: 10%;
+      opacity: 0;
+      transition: opacity 1s ease, transform 0.5s ease;
+    }
+
+    .animated-lion.visible {
+      opacity: 1;
+    }
+
+    .animated-lion:hover {
+      transform: scale(1.1);
+    }
+
+    .animated-lion svg {
+      width: 100px;
+      height: 60px;
+      fill: var(--safari-orange);
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+    }
+
+    .animated-jeep {
+      position: absolute;
+      bottom: 45px;
+      right: 10%;
+      animation: jeepBounce 1s ease-in-out infinite;
+    }
+
+    .animated-jeep svg {
+      width: 80px;
+      height: 45px;
+      fill: var(--safari-brown);
+    }
+
+    .animated-jeep .wheel {
+      animation: wheelSpin 0.5s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes jeepBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes wheelSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .safari-facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .fact-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .fact-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .fact-card i {
+      font-size: 2rem;
+      color: var(--safari-orange);
+      margin-bottom: 1rem;
+    }
+
+    .fact-card h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .fact-card p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .safari-btn-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .safari-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: var(--safari-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .safari-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 119, 44, 0.5);
+      background: #e08530;
+    }
+
+    /* Overview Section */
+    .overview {
+      padding: 5rem 2rem;
+      background: var(--safari-cream);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--safari-green);
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--safari-green), var(--safari-orange));
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .overview-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(45, 90, 39, 0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+      border-top: 4px solid var(--safari-green);
+    }
+
+    .overview-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .overview-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(45, 90, 39, 0.2);
+    }
+
+    .overview-card i {
+      font-size: 2.5rem;
+      color: var(--safari-orange);
+      margin-bottom: 1rem;
+    }
+
+    .overview-card h3 {
+      color: var(--safari-green);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .overview-card p {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--safari-green), var(--safari-green-light));
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(45, 90, 39, 0.4);
+    }
+
+    .btn-center {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    /* Itinerary Section */
+    .itinerary {
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, var(--safari-beige) 0%, var(--safari-cream) 100%);
+      position: relative;
+    }
+
+    /* Paw Print Trail */
+    .paw-trail {
+      position: absolute;
+      top: 50px;
+      left: 5%;
+      opacity: 0.15;
+    }
+
+    .paw-print {
+      width: 30px;
+      height: 30px;
+      fill: var(--safari-brown);
+      margin-bottom: 40px;
+      animation: pawFade 3s ease-in-out infinite;
+    }
+
+    .paw-print:nth-child(2) { margin-left: 20px; animation-delay: 0.3s; }
+    .paw-print:nth-child(3) { margin-left: 10px; animation-delay: 0.6s; }
+    .paw-print:nth-child(4) { margin-left: 25px; animation-delay: 0.9s; }
+    .paw-print:nth-child(5) { margin-left: 15px; animation-delay: 1.2s; }
+
+    @keyframes pawFade {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+
+    .day-card {
+      background: white;
+      border-radius: 24px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 40px rgba(45, 90, 39, 0.1);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      border-left: 5px solid var(--safari-green);
+    }
+
+    .day-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .day-header {
+      background: linear-gradient(135deg, var(--safari-green), var(--safari-green-light));
+      color: white;
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .day-header:hover {
+      background: linear-gradient(135deg, #245020, var(--safari-green));
+    }
+
+    .day-header h3 {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+    }
+
+    .day-number {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .day-icon {
+      margin-left: auto;
+      margin-right: 1rem;
+      font-size: 1.3rem;
+      animation: iconBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes iconBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    .toggle-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .day-card.active .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .day-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .day-card.active .day-content {
+      max-height: 2000px;
+    }
+
+    .day-body {
+      padding: 2rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--safari-green), var(--safari-orange));
+      border-radius: 3px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.3rem;
+      width: 14px;
+      height: 14px;
+      background: var(--safari-orange);
+      border: 3px solid var(--safari-green);
+      border-radius: 50%;
+      transform: translateX(-5.5px);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-content {
+      flex: 1;
+    }
+
+    .timeline-time {
+      font-weight: 700;
+      color: var(--safari-green);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-event {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .timeline-jeep {
+      width: 24px;
+      height: 24px;
+      fill: var(--safari-brown);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .timeline-item:hover .timeline-jeep {
+      opacity: 1;
+      animation: jeepHover 0.5s ease-in-out infinite;
+    }
+
+    @keyframes jeepHover {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(5px); }
+    }
+
+    .optional-section {
+      background: linear-gradient(135deg, rgba(45, 90, 39, 0.1), rgba(212, 119, 44, 0.1));
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      border-left: 4px solid var(--safari-orange);
+    }
+
+    .optional-section h4 {
+      color: var(--safari-green);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .optional-section ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .optional-section li {
+      padding: 0.3rem 0;
+      color: #555;
+      position: relative;
+    }
+
+    .optional-section li::before {
+      content: '→';
+      position: absolute;
+      left: -1rem;
+      color: var(--safari-orange);
+    }
+
+    .day-footer {
+      padding: 1.5rem 2rem;
+      background: rgba(45, 90, 39, 0.05);
+      border-top: 1px solid rgba(45, 90, 39, 0.1);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--safari-green);
+      border: 2px solid var(--safari-green);
+    }
+
+    .btn-secondary:hover {
+      background: var(--safari-green);
+      color: white;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--safari-brown) 0%, var(--safari-orange) 100%);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: white;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section .btn {
+      background: white;
+      color: var(--safari-brown);
+    }
+
+    .cta-section .btn:hover {
+      background: var(--safari-beige);
+    }
+
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      animation: pulse 2s infinite;
+    }
+
+    .floating-cta .btn {
+      padding: 1rem 1.5rem;
+      box-shadow: 0 10px 40px rgba(45, 90, 39, 0.5);
+      background: var(--safari-orange);
+    }
+
+    .floating-cta .btn:hover {
+      background: #e08530;
+    }
+
+    @media (max-width: 768px) {
+      .floating-cta {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+      }
+
+      .floating-cta .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Audio Button */
+    .audio-btn {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--safari-green);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0 5px 20px rgba(45, 90, 39, 0.4);
+    }
+
+    .audio-btn:hover {
+      transform: scale(1.1);
+      background: var(--safari-green-light);
+    }
+
+    .audio-btn.playing {
+      animation: audioPulse 1s ease-in-out infinite;
+    }
+
+    @keyframes audioPulse {
+      0%, 100% { box-shadow: 0 5px 20px rgba(45, 90, 39, 0.4); }
+      50% { box-shadow: 0 5px 30px rgba(45, 90, 39, 0.8); }
+    }
+
+    @media (max-width: 768px) {
+      .audio-btn {
+        bottom: 5rem;
+        left: 1rem;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: var(--safari-dark);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    footer h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--safari-orange);
+    }
+
+    footer .powered-by {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-icons a {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .footer-icons a:hover {
+      background: var(--safari-orange);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.5);
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-20px);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-icons {
+        gap: 1rem;
+      }
+
+      .hero-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+      }
+
+      .day-header {
+        padding: 1rem 1.5rem;
+      }
+
+      .day-body {
+        padding: 1.5rem;
+      }
+
+      .timeline {
+        padding-left: 1.5rem;
+      }
+
+      .timeline-item {
+        padding-left: 1rem;
+      }
+
+      .lion-container, .jeep-container {
+        display: none;
+      }
+
+      .trees-container {
+        display: none;
+      }
+
+      .paw-trail {
+        display: none;
+      }
+
+      .safari-animation-box {
+        padding: 1.5rem;
+      }
+
+      .safari-scene {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Animated Trees -->
+    <div class="trees-container">
+      <div class="tree">
+        <svg viewBox="0 0 100 200">
+          <path d="M50 0 L80 80 L65 80 L85 140 L60 140 L55 200 L45 200 L40 140 L15 140 L35 80 L20 80 Z"/>
+        </svg>
+      </div>
+      <div class="tree">
+        <svg viewBox="0 0 100 200">
+          <path d="M50 0 L80 80 L65 80 L85 140 L60 140 L55 200 L45 200 L40 140 L15 140 L35 80 L20 80 Z"/>
+        </svg>
+      </div>
+      <div class="tree">
+        <svg viewBox="0 0 100 200">
+          <path d="M50 0 L80 80 L65 80 L85 140 L60 140 L55 200 L45 200 L40 140 L15 140 L35 80 L20 80 Z"/>
+        </svg>
+      </div>
+      <div class="tree">
+        <svg viewBox="0 0 100 200">
+          <path d="M50 0 L80 80 L65 80 L85 140 L60 140 L55 200 L45 200 L40 140 L15 140 L35 80 L20 80 Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Walking Lion Animation -->
+    <div class="lion-container">
+      <svg class="lion-silhouette" viewBox="0 0 200 100">
+        <path d="M180 55 Q190 45 185 35 Q180 25 170 30 L165 35 Q160 25 145 25 Q130 25 125 40 L120 35 L115 40 Q110 30 100 30 Q90 30 85 40 L80 45 L40 45 Q30 45 25 55 L20 55 Q15 50 10 55 Q5 60 10 65 L25 65 L25 75 L35 75 L35 65 L55 65 L55 75 L65 75 L65 65 L165 65 L165 75 L175 75 L175 60 Z M170 40 Q175 40 175 45 Q175 50 170 50 Q165 50 165 45 Q165 40 170 40"/>
+      </svg>
+    </div>
+
+    <!-- Jeep Animation -->
+    <div class="jeep-container">
+      <svg class="jeep-svg" viewBox="0 0 200 100">
+        <rect x="30" y="30" width="140" height="45" rx="5" fill="#8b5a2b"/>
+        <rect x="35" y="15" width="80" height="20" rx="3" fill="#6b4423"/>
+        <rect x="40" y="20" width="25" height="12" fill="#87ceeb"/>
+        <rect x="70" y="20" width="25" height="12" fill="#87ceeb"/>
+        <circle cx="55" cy="80" r="15" fill="#333"/>
+        <circle cx="55" cy="80" r="8" fill="#666"/>
+        <circle cx="145" cy="80" r="15" fill="#333"/>
+        <circle cx="145" cy="80" r="8" fill="#666"/>
+        <rect x="165" y="45" width="15" height="8" fill="#333"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-paw"></i>
+        Wildlife Safari Adventure
+      </div>
+      <h1>4-Day Trip Itinerary</h1>
+      <p class="hero-subtitle">Jantral to Sasan Gir</p>
+      <p>Explore temples, nature, and the home of Asiatic Lions</p>
+      
+      <div class="hero-icons">
+        <div class="hero-icon" title="Safari Jeep">
+          <i class="fas fa-truck-monster"></i>
+        </div>
+        <div class="hero-icon" title="Wildlife">
+          <i class="fas fa-paw"></i>
+        </div>
+        <div class="hero-icon" title="Calendar">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="hero-icon" title="Map">
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- Safari Highlight Section -->
+  <section class="safari-highlight">
+    <div class="safari-bg-elements">
+      <svg class="safari-tree-bg" width="100" height="150" viewBox="0 0 100 150">
+        <path d="M50 0 L80 60 L65 60 L85 100 L55 100 L55 150 L45 150 L45 100 L15 100 L35 60 L20 60 Z" fill="white"/>
+      </svg>
+      <svg class="safari-tree-bg" width="100" height="150" viewBox="0 0 100 150">
+        <path d="M50 0 L80 60 L65 60 L85 100 L55 100 L55 150 L45 150 L45 100 L15 100 L35 60 L20 60 Z" fill="white"/>
+      </svg>
+      <svg class="safari-tree-bg" width="100" height="150" viewBox="0 0 100 150">
+        <path d="M50 0 L80 60 L65 60 L85 100 L55 100 L55 150 L45 150 L45 100 L15 100 L35 60 L20 60 Z" fill="white"/>
+      </svg>
+    </div>
+
+    <div class="safari-content">
+      <h2 class="safari-title"><i class="fas fa-paw"></i> Welcome to Gir — Land of The Lions</h2>
+      <p class="safari-subtitle">Experience the majestic Asiatic Lions in their natural habitat</p>
+
+      <div class="safari-animation-box">
+        <div class="safari-scene">
+          <div class="animated-lion" id="animatedLion">
+            <svg viewBox="0 0 200 100">
+              <path d="M180 55 Q190 45 185 35 Q180 25 170 30 L165 35 Q160 25 145 25 Q130 25 125 40 L120 35 L115 40 Q110 30 100 30 Q90 30 85 40 L80 45 L40 45 Q30 45 25 55 L20 55 Q15 50 10 55 Q5 60 10 65 L25 65 L25 75 L35 75 L35 65 L55 65 L55 75 L65 75 L65 65 L165 65 L165 75 L175 75 L175 60 Z M170 40 Q175 40 175 45 Q175 50 170 50 Q165 50 165 45 Q165 40 170 40"/>
+            </svg>
+          </div>
+          <div class="animated-jeep">
+            <svg viewBox="0 0 160 80">
+              <rect x="20" y="20" width="120" height="35" rx="5"/>
+              <rect x="25" y="8" width="65" height="16" rx="3"/>
+              <rect x="30" y="12" width="20" height="10" fill="#87ceeb"/>
+              <rect x="55" y="12" width="20" height="10" fill="#87ceeb"/>
+              <circle class="wheel" cx="45" cy="58" r="12" fill="#333"/>
+              <circle cx="45" cy="58" r="6" fill="#666"/>
+              <circle class="wheel" cx="115" cy="58" r="12" fill="#333"/>
+              <circle cx="115" cy="58" r="6" fill="#666"/>
+            </svg>
+          </div>
+          <div class="safari-grass">
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+            <div class="grass-blade"></div>
+          </div>
+          <div class="safari-ground"></div>
+        </div>
+      </div>
+
+      <div class="safari-btn-container">
+        <button class="safari-btn" onclick="startSafariAnimation()">
+          <i class="fas fa-play"></i>
+          Start Safari Animation
+        </button>
+      </div>
+
+      <div class="safari-facts">
+        <div class="fact-card">
+          <i class="fas fa-crown"></i>
+          <h4>Home of Asiatic Lions</h4>
+          <p>Gir National Park is the only place in the world where majestic Asiatic Lions roam free in the wild.</p>
+        </div>
+        <div class="fact-card">
+          <i class="fas fa-road"></i>
+          <h4>Safari Distance</h4>
+          <p>Each safari covers approximately 33-40 km through diverse terrain of forest and grasslands.</p>
+        </div>
+        <div class="fact-card">
+          <i class="fas fa-sun"></i>
+          <h4>Best Timing</h4>
+          <p>Morning and evening drives offer the best chance to spot lions during their active hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trip Overview -->
+  <section class="overview">
+    <div class="container">
+      <h2 class="section-title">Trip Overview</h2>
+      
+      <div class="overview-grid">
+        <div class="overview-card">
+          <i class="fas fa-flag-checkered"></i>
+          <h3>Start Location</h3>
+          <p>Jantral, Anand, Gujarat</p>
+        </div>
+        
+        <div class="overview-card">
+          <i class="fas fa-map-pin"></i>
+          <h3>Destination</h3>
+          <p>Sasan Gir National Park</p>
+        </div>
+        
+        <div class="overview-card">
+          <i class="fas fa-clock"></i>
+          <h3>Duration</h3>
+          <p>4 Days / 3 Nights</p>
+        </div>
+        
+        <div class="overview-card">
+          <i class="fas fa-users"></i>
+          <h3>Trip Type</h3>
+          <p>Group Travel</p>
+        </div>
+      </div>
+      
+      <div class="btn-center">
+        <a href="https://www.google.com/maps/dir/Jantral,+Anand,+Gujarat/Sarangpur/Gadhada/Amreli/Dhari/Visavadar/Sasan+Gir/" target="_blank" class="btn">
+          <i class="fas fa-location-arrow"></i>
+          Start Route Navigation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Itinerary Section -->
+  <section class="itinerary">
+    <!-- Paw Print Trail -->
+    <div class="paw-trail">
+      <svg class="paw-print" viewBox="0 0 50 50">
+        <ellipse cx="25" cy="35" rx="12" ry="10"/>
+        <circle cx="15" cy="18" r="6"/>
+        <circle cx="35" cy="18" r="6"/>
+        <circle cx="10" cy="28" r="5"/>
+        <circle cx="40" cy="28" r="5"/>
+      </svg>
+      <svg class="paw-print" viewBox="0 0 50 50">
+        <ellipse cx="25" cy="35" rx="12" ry="10"/>
+        <circle cx="15" cy="18" r="6"/>
+        <circle cx="35" cy="18" r="6"/>
+        <circle cx="10" cy="28" r="5"/>
+        <circle cx="40" cy="28" r="5"/>
+      </svg>
+      <svg class="paw-print" viewBox="0 0 50 50">
+        <ellipse cx="25" cy="35" rx="12" ry="10"/>
+        <circle cx="15" cy="18" r="6"/>
+        <circle cx="35" cy="18" r="6"/>
+        <circle cx="10" cy="28" r="5"/>
+        <circle cx="40" cy="28" r="5"/>
+      </svg>
+      <svg class="paw-print" viewBox="0 0 50 50">
+        <ellipse cx="25" cy="35" rx="12" ry="10"/>
+        <circle cx="15" cy="18" r="6"/>
+        <circle cx="35" cy="18" r="6"/>
+        <circle cx="10" cy="28" r="5"/>
+        <circle cx="40" cy="28" r="5"/>
+      </svg>
+      <svg class="paw-print" viewBox="0 0 50 50">
+        <ellipse cx="25" cy="35" rx="12" ry="10"/>
+        <circle cx="15" cy="18" r="6"/>
+        <circle cx="35" cy="18" r="6"/>
+        <circle cx="10" cy="28" r="5"/>
+        <circle cx="40" cy="28" r="5"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <h2 class="section-title">Daily Itinerary</h2>
+
+      <!-- Day 1 -->
+      <div class="day-card active">
+        <div class="day-header" onclick="toggleDay(this)">
+          <h3>
+            <span class="day-number">DAY 1</span>
+            Saturday: Jantral → Sasan Gir
+          </h3>
+          <i class="fas fa-car day-icon"></i>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="day-content">
+          <div class="day-body">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">7:00 AM</div>
+                  <div class="timeline-event">Depart from Jantral</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">10:00 AM</div>
+                  <div class="timeline-event">Sarangpur — 30 min Darshan & Nasto</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">11:30 AM</div>
+                  <div class="timeline-event">Gadhada — 1 hour lunch break</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">2:00 PM</div>
+                  <div class="timeline-event">Amreli — 15 min break</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">3:00 PM</div>
+                  <div class="timeline-event">Dhari — Temple + Dam + Snacks</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">5:15 PM</div>
+                  <div class="timeline-event">Visavadar — 15 min break</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">7:15 PM</div>
+                  <div class="timeline-event">Arrive at Sasan Gir Resort</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="day-footer">
+            <a href="https://www.google.com/maps/dir/Jantral,+Anand,+Gujarat/Sarangpur/Gadhada/Amreli/Dhari/Visavadar/Sasan+Gir/" target="_blank" class="btn btn-secondary">
+              <i class="fas fa-route"></i>
+              Open Route Map
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <h3>
+            <span class="day-number">DAY 2</span>
+            Sunday: Resort Fun Day
+          </h3>
+          <i class="fas fa-umbrella-beach day-icon"></i>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="day-content">
+          <div class="day-body">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">Morning</div>
+                  <div class="timeline-event">Resort activities & relaxation</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">Afternoon</div>
+                  <div class="timeline-event">Pool time & leisure activities</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">Evening</div>
+                  <div class="timeline-event">Nature walk & resort exploration</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="optional-section">
+              <h4><i class="fas fa-om"></i> Optional: Somnath Temple Visit</h4>
+              <ul>
+                <li>1 hour journey from resort</li>
+                <li>1-2 hours Darshan at the temple</li>
+                <li>1 hour return journey</li>
+              </ul>
+            </div>
+          </div>
+          <div class="day-footer">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Sasan+Gir,+Gujarat&destination=Somnath+Temple,+Prabhas+Patan,+Gujarat" target="_blank" class="btn btn-secondary">
+              <i class="fas fa-gopuram"></i>
+              Open Somnath Map
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <h3>
+            <span class="day-number">DAY 3</span>
+            Monday: SAFARI DAY
+          </h3>
+          <i class="fas fa-paw day-icon"></i>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="day-content">
+          <div class="day-body">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">Till 1:00 PM</div>
+                  <div class="timeline-event">Free time & relaxation at resort</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">2:00 PM</div>
+                  <div class="timeline-event">Reach Sinh Sadan — Permit check-in</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">3:00 PM</div>
+                  <div class="timeline-event">Safari Starts — Wildlife adventure begins!</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">6:00 PM</div>
+                  <div class="timeline-event">Safari Ends — Return to base</div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">Evening</div>
+                  <div class="timeline-event">Dinner & rest at resort</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="optional-section">
+              <h4><i class="fas fa-binoculars"></i> Safari Tips</h4>
+              <ul>
+                <li>Carry binoculars and camera with zoom lens</li>
+                <li>Wear earthy/neutral colored clothes</li>
+                <li>Keep silence during the safari</li>
+                <li>Follow guide instructions at all times</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <h3>
+            <span class="day-number">DAY 4</span>
+            Tuesday: Return Journey
+          </h3>
+          <i class="fas fa-home day-icon"></i>
+          <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="day-content">
+          <div class="day-body">
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">7:00 AM</div>
+                  <div class="timeline-event">Depart from Resort</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">8:30 AM</div>
+                  <div class="timeline-event">Uparkot Junagadh visit — 2 hours stay</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">12:00 PM</div>
+                  <div class="timeline-event">Virpur Jalaram Mandir + Lunch + Bazaar</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">4:00 PM</div>
+                  <div class="timeline-event">Rajkot Break</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">6:00 PM</div>
+                  <div class="timeline-event">Limbdi Break</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <div class="timeline-time">8:30 PM</div>
+                  <div class="timeline-event">Reach Jantral — Trip Complete!</div>
+                </div>
+                <svg class="timeline-jeep" viewBox="0 0 50 30">
+                  <rect x="5" y="5" width="40" height="15" rx="2" fill="currentColor"/>
+                  <circle cx="15" cy="22" r="5" fill="currentColor"/>
+                  <circle cx="35" cy="22" r="5" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="day-footer">
+            <a href="https://www.google.com/maps/dir/Sasan+Gir/Uparkot+Fort+Junagadh/Virpur/Rajkot/Limbdi/Jantral,+Anand,+Gujarat/" target="_blank" class="btn btn-secondary">
+              <i class="fas fa-route"></i>
+              Open Return Route
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2><i class="fas fa-map-marked-alt"></i> Ready for the Adventure?</h2>
+      <a href="https://www.google.com/maps/dir/Jantral,+Anand,+Gujarat/Sarangpur/Gadhada/Amreli/Dhari/Visavadar/Sasan+Gir/Uparkot+Fort+Junagadh/Virpur/Rajkot/Limbdi/Jantral,+Anand,+Gujarat/" target="_blank" class="btn">
+        <i class="fas fa-route"></i>
+        View Complete Route Map
+      </a>
+    </div>
+  </section>
+
+  <!-- Floating CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="https://www.google.com/maps/dir/Jantral,+Anand,+Gujarat/Sarangpur/Gadhada/Amreli/Dhari/Visavadar/Sasan+Gir/Uparkot+Fort+Junagadh/Virpur/Rajkot/Limbdi/Jantral,+Anand,+Gujarat/" target="_blank" class="btn">
+      <i class="fas fa-map"></i>
+      Open Full Route Map
+    </a>
+  </div>
+
+  <!-- Audio Button -->
+  <button class="audio-btn" id="audioBtn" onclick="toggleAudio()" title="Play Lion Sounds">
+    <i class="fas fa-volume-mute" id="audioIcon"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <h3>Trip Designed for Group Travel</h3>
+   
+    <p>Experience the wild beauty of Gujarat's Sasan Gir</p>
+    
+   
+    
+    <p class="copyright">© 2025 Sasan Gir Trip Planner. All rights reserved.</p>
+  </footer>
+
+  <!-- Audio Element -->
+  <!-- Updated to authentic lion roar sound from Pixabay -->
+  <audio id="jungleAudio" loop autoplay>
+    <source src="/Lion.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Toggle Day Accordion
+    function toggleDay(header) {
+      const card = header.closest('.day-card');
+      const wasActive = card.classList.contains('active');
+      
+      // Close all other cards
+      document.querySelectorAll('.day-card').forEach(c => {
+        c.classList.remove('active');
+      });
+      
+      // Toggle current card
+      if (!wasActive) {
+        card.classList.add('active');
+      }
+    }
+
+    // Scroll Reveal Animation
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.overview-card, .day-card, .fact-card');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    // Safari Animation
+    function startSafariAnimation() {
+      const lion = document.getElementById('animatedLion');
+      lion.classList.toggle('visible');
+    }
+
+    let isPlaying = false;
+    
+    // Attempt autoplay on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('jungleAudio');
+      const icon = document.getElementById('audioIcon');
+      const btn = document.getElementById('audioBtn');
+      
+      // Try to autoplay
+      audio.play().then(() => {
+        // Autoplay succeeded
+        isPlaying = true;
+        icon.className = 'fas fa-volume-up';
+        btn.classList.add('playing');
+      }).catch(e => {
+        // Autoplay blocked - wait for first user interaction
+        console.log('Autoplay blocked, waiting for user interaction');
+        
+        // Play on first click/touch anywhere on page
+        function playOnInteraction() {
+          audio.play().then(() => {
+            isPlaying = true;
+            icon.className = 'fas fa-volume-up';
+            btn.classList.add('playing');
+          }).catch(err => console.log('Audio play failed:', err));
+          
+          // Remove listeners after first interaction
+          document.removeEventListener('click', playOnInteraction);
+          document.removeEventListener('touchstart', playOnInteraction);
+        }
+        
+        document.addEventListener('click', playOnInteraction);
+        document.addEventListener('touchstart', playOnInteraction);
+      });
+    });
+
+    // Toggle Audio
+    function toggleAudio() {
+      const audio = document.getElementById('jungleAudio');
+      const icon = document.getElementById('audioIcon');
+      const btn = document.getElementById('audioBtn');
+      
+      if (isPlaying) {
+        audio.pause();
+        icon.className = 'fas fa-volume-mute';
+        btn.classList.remove('playing');
+      } else {
+        audio.play().catch(e => console.log('Audio play failed:', e));
+        icon.className = 'fas fa-volume-up';
+        btn.classList.add('playing');
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // Hide floating CTA near footer
+    function handleFloatingCta() {
+      const footer = document.querySelector('footer');
+      const cta = document.getElementById('floatingCta');
+      const footerRect = footer.getBoundingClientRect();
+      
+      if (footerRect.top < window.innerHeight + 100) {
+        cta.style.opacity = '0';
+        cta.style.pointerEvents = 'none';
+      } else {
+        cta.style.opacity = '1';
+        cta.style.pointerEvents = 'auto';
+      }
+    }
+
+    // Initialize
+    window.addEventListener('scroll', () => {
+      revealOnScroll();
+      handleFloatingCta();
+    });
+
+    // Initial reveal check
+    revealOnScroll();
+
+    // Make first day card visible immediately
+    document.querySelector('.day-card').classList.add('visible');
+  </script>
+</body>
+</html>
